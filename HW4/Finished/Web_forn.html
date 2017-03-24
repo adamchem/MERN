@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Form</title>
+    <style>
+      .menu{
+  background-color: #FF3333;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+}
+.menu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu ul li{
+  float: left;
+}
+#songl{
+  display: none;
+}
+#songl li{
+  clear: both;
+  width: 90%;
+  height: 25px;
+  padding-left: 10%;
+  background-color: #FF3333;
+  text-align: left;
+}
+#songl li:hover{
+  background-color:	#FF0000;
+}
+li a{
+  display:block;
+	width:160px;
+	height:50px;
+	line-height:50px;
+  text-decoration: none;
+  text-align: center;
+	color:#333333;
+	font-family:Arial;
+}
+li a:hover{
+  background-color:	#FF0000;
+}
+.main{
+  background-color: #FAFAD2;
+  overflow: auto;
+  margin-top: 100px;
+  display:block;
+}
+#album{
+  background-color: #111111;
+  width: 35%;
+  height: 400px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#form {
+  background-color: #F5FFFA;
+  width: 25%;
+  height: 400px;
+  margin-left: 50%;
+  margin-top: 20px;
+}
+#form div{
+  margin:10px 0px;
+}
+
+    </style>
+    <script>
+    function showlist(){document.getElementById('songl').style.display="block";}
+    function hidelist(){document.getElementById('songl').style.display="none";}
+    var sSong = ["<img src='pic/off_the_world.jpg'>",
+                "<img src='pic/bad.png'>",
+                "<img src='pic/dangerous.jpg'>",
+                "<img src='pic/thriller.png'>",
+                "<img src='pic/history.jpg'>",
+                "<img src='pic/xscape.jpg'>"];
+    function selSong(pic){document.getElementById('album').innerHTML= pic;}
+    function send(){alert("感謝您的答覆");}
+  </script>
+  </head>
+ 
+  <body>
+    <h1>Legend Michael </h1>
+<!--  MENU  -->
+    <div class = "menu">
+      <ul>
+        <li><a href="Web.html">HOME</a></li>
+        <li onmousemove="showlist()" onmouseout="hidelist()">
+          <a href="#">SONGS</a>
+          <ul id="songl">
+            <li onclick="selSong(sSong[0])"> Off the World </li>
+            <li onclick="selSong(sSong[1])"> Bad </li>
+            <li onclick="selSong(sSong[2])"> Dangerous </li>
+            <li onclick="selSong(sSong[3])"> Thriller </li>
+            <li onclick="selSong(sSong[4])"> History </li>
+            <li onclick="selSong(sSong[5])"> Xscape </li>
+          </ul>
+        </li>
+        <li><a href="#">PHOTO</a></li>
+        <li><a href="#">FORM</a></li>
+      </ul>
+    </div>
+<!-- MAIN CONTENT -->
+    <div class="main">
+      <div id="album">
+      </div>
+<!--  FORM  -->
+      <div id="form">
+        <form action="login.aspx" method="post">
+          <fieldset>
+            <legend> 輸入表單 </legend>
+            <div>
+              <label for="uname"> 名字: </lable>
+              <input id="uname" type="text"/>
+            </div>
+            <div>
+              <label for="uage"> 年齡: </lable>
+              <input id="uage" type="number" min="0" max="120"/>
+            </div>
+            <div>
+              <label> 性別: </lable>
+              <input type="radio" name="sex" value="male"/>男
+              <input type="radio" name="sex" value="female"/>女
+            </div>
+            <div>
+              <label>最愛的專輯:</lable>
+              <select name="like">
+                <option value="1">off the world</option>
+                <option value="2">bad</option>
+                <option value="3">dangerous</option>
+                <option value="4">thriller</option>
+                <option value="5">history</option>
+                <option value="6">xscape</option>
+              </select>
+            </div>
+            <div>
+              <label>為什麼?</lable></br>
+              <textarea name="why" cols="20" rows="10" placeholder="why you like" maxlength="100"></textarea>
+            </div>
+          </fieldset>
+          </br>
+          <input type="button" onclick="send()" value="送出"/>
+        </form>
+      </div>
+      <br>
+    </div>
+
+  </body>
+</html>

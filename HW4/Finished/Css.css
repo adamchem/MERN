@@ -1,0 +1,91 @@
+body {
+  background-color: black;
+}
+
+h1{
+  color: gold;
+  text-align: center;
+  font-style: italic;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+li a{
+  display: block;
+  width: 150px;
+  height: 40px;
+  line-height: 50px;
+  text-indent: 55px;
+  text-decoration: none;
+  font-family:Arial;
+}
+
+.menu {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 30px;
+  background-color: silver;
+ }
+
+
+ li a:hover{
+   background-color: gray;
+ }
+
+.contain{
+  width: 100%;
+  background: url('pic/backgroung1.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.main{
+  width: 40%;
+  float: left;
+}
+
+.main p{
+  color: white;
+  text-align: left;
+  width: 100%;
+  height: 500px;
+  padding: 15px;
+  border: 2px dashed white;
+}
+
+.album{
+  width: 35%;
+  height: 500px;
+  overflow: auto;
+  padding: 50px;
+  margin-left: 50%;
+}
+
+table{
+   border-collapse: collapse;
+   background-color: rgba(255, 0, 0, 0.2);
+}
+ table, th, td{
+  border: 1px solid white;
+  padding: 5px;
+}
+ table p{
+  color: white;
+  text-align: center;
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  display: block;
+  background-color: rgba(150,5,100,0.8);
+  margin-top: 30px;
+}
